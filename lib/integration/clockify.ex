@@ -9,4 +9,6 @@ defmodule ClockifyRequester.Integration.Clockify do
     headers = ["X-Api-Key": "#{token}", "Content-Type": "applications/json"]
     HTTPoison.get(url, headers)
   end
+
+  def get_api_key, do: Application.get_env(:clockify_requester, :api_key)
 end
