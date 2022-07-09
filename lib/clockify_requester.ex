@@ -1,18 +1,5 @@
 defmodule ClockifyRequester do
   @moduledoc """
-  Documentation for `ClockifyRequester`.
+  ClockifyRequester module is responsible for sending API
   """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> ClockifyRequester.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
 end
