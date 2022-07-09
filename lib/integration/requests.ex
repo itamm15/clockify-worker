@@ -6,6 +6,7 @@ defmodule ClockifyRequester.Integration.Requests do
 
   # functions
 
+  @spec get_workspace_id ::   {:ok, HTTPoison.Response.t()} | {:error, HTTPoison.Error.t()}
   def get_workspace_id do
     endpoint = "/workspaces"
 
@@ -21,6 +22,7 @@ defmodule ClockifyRequester.Integration.Requests do
 
   ## Privates
 
+  @spec extract_workspaces_from_response(tuple()) :: String.t()
   defp extract_workspaces_from_response({:ok, response}) do
     [%{"id" => id}] = response
     id
