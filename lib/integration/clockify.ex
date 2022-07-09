@@ -2,11 +2,11 @@ defmodule ClockifyRequester.Integration.Clockify do
   # attributes
   @api "https://api.clockify.me/api/v1"
 
-  @spec get(String.t(), String.t()) ::
+  @spec get(String.t()) ::
           {:ok, HTTPoison.Response.t()} | {:error, HTTPoison.Error.t()}
-  defp get(token, endpoint) do
+  def get(endpoint) do
     url = @api <> endpoint
-    headers = ["X-Api-Key": "#{token}", "Content-Type": "applications/json"]
+    headers = ["X-Api-Key": "#{get_api_key()}", "Content-Type": "applications/json"]
     HTTPoison.get(url, headers)
   end
 
