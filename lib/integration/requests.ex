@@ -32,7 +32,8 @@ defmodule ClockifyRequester.Integration.Requests do
     end
   end
 
-  @spec get_summary(String.t(), String.t()) :: {:ok, HTTPoison.Response.t()} | {:error, HTTPoison.Error.t()}
+  @spec get_summary(String.t(), String.t()) ::
+          {:ok, HTTPoison.Response.t()} | {:error, HTTPoison.Error.t()}
   def get_summary(start_date, end_date) do
     endpoint = "/workspaces/#{get_workspace_id()}/reports/summary"
 
@@ -61,9 +62,11 @@ defmodule ClockifyRequester.Integration.Requests do
   @spec get_users :: {:ok, HTTPoison.Response.t()} | {:error, HTTPoison.Error.t()}
   def get_users do
     endpoint = "/workspaces/#{get_workspace_id()}/users"
+
     case get(endpoint) do
       {:ok, response} ->
         Poison.decode!(response.body)
+
       {:error, error} ->
         raise error
     end
@@ -75,12 +78,15 @@ defmodule ClockifyRequester.Integration.Requests do
       false ->
         [%{"id" => user_id}] = get_user_id(email)
         endpoint = "/workspaces/#{get_workspace_id()}/user/#{user_id}/time-entries"
+
         case get(endpoint) do
           {:ok, response} ->
             Poison.decode!(response.body)
+
           {:error, error} ->
             raise error
         end
+
       true ->
         raise "Could not find the user."
     end

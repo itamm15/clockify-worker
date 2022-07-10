@@ -19,7 +19,8 @@ defmodule ClockifyRequester.Integration.Clockify do
     HTTPoison.post(url, headers)
   end
 
-  @spec post_reports(String.t(), String.t(), String.t()) :: {:ok, HTTPoison.Response.t()} | {:error, HTTPoison.Error.t()}
+  @spec post_reports(String.t(), String.t(), String.t()) ::
+          {:ok, HTTPoison.Response.t()} | {:error, HTTPoison.Error.t()}
   def post_reports(endpoint, start_date, end_date) do
     url = @reports_api <> endpoint
     headers = ["X-Api-Key": "#{get_api_key()}", "Content-Type": "application/json"]
