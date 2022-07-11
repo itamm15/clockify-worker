@@ -27,8 +27,8 @@ defmodule ClockifyRequester.Integration.Clockify do
 
     body =
       %{
-        "dateRangeStart" => start_date,
-        "dateRangeEnd" => end_date,
+        "dateRangeStart" => "#{start_date}T00:00:00.000",
+        "dateRangeEnd" => "#{end_date}T23:59:59.000",
         "summaryFilter" => %{
           "groups" => [
             "USER"
@@ -48,8 +48,8 @@ defmodule ClockifyRequester.Integration.Clockify do
 
     body =
       %{
-        "start" => start_date,
-        "end" => end_date,
+        "start" => "#{start_date}T08:00:00.000Z",
+        "end" => "#{end_date}T15:59:34.000Z",
         "billable" => billable,
         "description" => description,
         "projectId" => project_id,
