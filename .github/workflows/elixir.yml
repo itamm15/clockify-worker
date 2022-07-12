@@ -14,8 +14,6 @@ jobs:
 
     name: Build and test
     runs-on: ubuntu-latest
-    env: 
-      dev.secret.exs: api_key
       
     steps:
     - uses: actions/checkout@v2
