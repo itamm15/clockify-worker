@@ -12,8 +12,7 @@ permissions:
 jobs:
   build:
 
-    env: 
-      API_KEY: dev.secret.exs
+    environment: MIX_TEST
     
     name: Build and test
     runs-on: ubuntu-latest
