@@ -4,3 +4,5 @@
 
 **Clockify API**
 https://clockify.me/developers-api
+
+To *make* things work, generate the API key on your Clockify account and insert into "dev.secret.exs" file. 
