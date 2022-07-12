@@ -9,6 +9,9 @@ on:
 permissions:
   contents: read
 
+env: 
+  MIX_ENV: api_key
+
 jobs:
   build:
 
