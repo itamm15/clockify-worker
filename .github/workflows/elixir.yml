@@ -9,6 +9,8 @@ on:
 permissions:
   contents: read
 
+env:
+  dev_secret_exs: ${{ secrets.dev_secret_exs }}
 
 jobs:
   build:
