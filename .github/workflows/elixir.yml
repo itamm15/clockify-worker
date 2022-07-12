@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 env: 
-  MIX_ENV: test
+  MIX_ENV: api_key
 
 jobs:
   build:
