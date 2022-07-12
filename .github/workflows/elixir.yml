@@ -9,9 +9,6 @@ on:
 permissions:
   contents: read
 
-env:
-  dev_secret_exs: ${{ secrets.dev_secret_exs }}
-
 jobs:
   build:
 
@@ -31,6 +28,7 @@ jobs:
         path: deps
         key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
         restore-keys: ${{ runner.os }}-mix-
+        api_key: ${{ secrets.dev_secret_exs }}
     - name: env
       run: env
     - name: Install dependencies
